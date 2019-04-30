@@ -1,4 +1,4 @@
-//const assert = require('assert');
+const assert = require('assert');
 const User = require('../src/user');
 
 describe('Reading users out of database', () => {
@@ -12,8 +12,9 @@ describe('Reading users out of database', () => {
     it ('finds all users with name of Joe', (done) => {
         User.find({name : 'Joe'}) //find me every user with name of Joe
         .then((users) => {
-            console.log(users);
-            done();
+            assert(users[0]._id.toString() === joe._id.toString());
+            done(); 
+            .then(call done 'save many ')
         });
     });
 });
