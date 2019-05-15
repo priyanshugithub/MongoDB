@@ -15,7 +15,7 @@ describe('Reading users out of database', () => {
             assert(users[0]._id.toString() === joe._id.toString());
             done(); 
         });
-    });
+    })
 
     it('Find a user with a particular id', (done) => {
         User.findOne ({ _id : joe._id })
