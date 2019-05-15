@@ -14,7 +14,14 @@ describe('Reading users out of database', () => {
         .then((users) => {
             assert(users[0]._id.toString() === joe._id.toString());
             done(); 
-            .then(call done 'save many ')
+        });
+    });
+
+    it('Find a user with a particular id', (done) => {
+        User.findOne ({ _id : joe._id })
+        .then((user) => {
+            assert(user.name === 'Joe');
+            done();
         });
     });
 });
