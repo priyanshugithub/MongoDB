@@ -43,6 +43,6 @@ describe('Deleting a User', () => {
         .then((user) => {
             assert(user === null);
             done();
-        });
+        })
     });
 });
