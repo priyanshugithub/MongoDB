@@ -15,4 +15,18 @@ describe('Subdocuments', () => {
            done();
        });
     });
+
+    it('can add subdocuments to existing records', (done) => {
+        const joe = new User({
+            name : 'Joe',
+            posts : []
+        });
+
+        joe.save()
+        .then(() => User.findOne({ name: 'Joe' }))
+        .then((user) => {
+            user.posts.push({ title : 'New Post' });
+            user.save();
+        })
+    });
 });
