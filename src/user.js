@@ -21,7 +21,7 @@ const UserSchema = new Schema({
 });
 
 UserSchema.virtual('postCount').get(function() {
-  console.log('Hi');
+  return this;
 });
 
 // UserSchema.pre('remove', function(next) {
